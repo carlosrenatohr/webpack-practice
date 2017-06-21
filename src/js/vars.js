@@ -4,7 +4,7 @@ export let isFalse = false;
 export class RandomNumber {
 
 	static getRandInteger () {
-		return Math.Ceil(Math.random() * 100);
+		return Math.ceil(Math.random() * 100);
 	}
 
 	static getRandRange (min, max) {

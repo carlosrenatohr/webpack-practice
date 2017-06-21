@@ -80,6 +80,10 @@ module.exports = {
 			chunks: [] // Param to include bundles on template
 					  // So It's necessary to name every entry
 		}),*/
+		new webpack.ProvidePlugin({
+			'$': 'jquery',
+			'jQuery': 'jquery'
+		}),
 		//-- Webpack 3
 		new webpack.optimize.ModuleConcatenationPlugin()
 	]
