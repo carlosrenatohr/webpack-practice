@@ -1,6 +1,7 @@
 import '../css/main.scss';
 import '../css/styles.css';
 import {isTrue, isFalse, RandomInteger} from './vars';
+import '../dashboard.html';
 
 window.addEventListener('load', loading);
 function loading() {

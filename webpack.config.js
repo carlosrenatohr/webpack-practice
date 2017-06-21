@@ -45,6 +45,16 @@ module.exports = {
 			use: ['html-loader']
 		},
 		{
+			test: /\.html$/,
+			use: {
+				loader:'file-loader',
+				options: {
+					name: '[name].[ext]'
+				}
+			},
+			exclude: path.resolve(__dirname, 'src/index.html')
+		},
+		{
 			test: /\.(jpg|png)$/,
 			use: {
 				loader:'file-loader',
@@ -61,8 +71,15 @@ module.exports = {
 		//new webpack.optimize.UglifyJsPlugin({/* .. */}),
 		extractPlugin,
 		new htmlWebpackPlugin({
+			filename: 'index.html',
 			template: 'src/index.html'
 		}),
+		/*new htmlWebpackPlugin({
+			filename: 'main.html',
+			template: 'src/dashboard.html',
+			chunks: [] // Param to include bundles on template
+					  // So It's necessary to name every entry
+		}),*/
 		//-- Webpack 3
 		new webpack.optimize.ModuleConcatenationPlugin()
 	]
